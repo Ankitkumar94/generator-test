@@ -1,0 +1,22 @@
+<div style="width: auto; height: 250px; overflow: scroll ">
+  <input type="text" ng-model="vm.query" /> <br/>
+  <small> ** search by patient name </small> <br/><br/>
+  <button ng-click="onsearch"> Search </button> <br/><br/>
+
+  <table>
+    <tr>
+      <th> AuditInfo </th>
+      <th> Identifier </th>
+      <th> Display </th>
+      <th> Location </th>
+      <th> uuid </th>
+    </tr>
+    <tr ng-repeat="patient in patients | filter: vm.query">
+      <td> {{patient.auditInfo}} </td>
+      <td> {{patient.identifier}} </td>
+      <td> {{patient.display}} </td>
+      <td> {{patient.location}} </td>
+      <td> {{patient.uuid}} </td>
+    </tr>
+  </table>
+</div>
